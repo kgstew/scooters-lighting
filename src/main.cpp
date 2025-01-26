@@ -52,10 +52,9 @@
 void setup() {
   
   Serial.begin(115200);
-
-  homeSpan.begin(Category::Bridges,"Koral Bridge");
   homeSpan.setControlPin(CONTROL_PIN);
   homeSpan.setStatusPin(STATUS_LED_PIN);
+  homeSpan.begin(Category::Bridges,"Koral Bridge");
 
   new SpanAccessory();                            // This first Accessory is the new "Bridge" Accessory.  It contains no functional Services, just the Accessory Information Service
     new Service::AccessoryInformation();
