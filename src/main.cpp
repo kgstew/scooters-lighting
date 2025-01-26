@@ -67,7 +67,7 @@ void setup() {
   
   Serial.begin(115200);
 
-  homeSpan.begin(Category::Bridges,"HomeSpan Bridge");
+  homeSpan.begin(Category::Bridges,"Koral Bridge");
   // homeSpan.setControlPin(CONTROL_PIN);
   // homeSpan.setStatusPin(STATUS_PIN);
 
@@ -81,14 +81,26 @@ void setup() {
       new Characteristic::Name("Front");
   
     new DimmableLED(LED_PIN);        
+  
+  new SpanAccessory(); 
+    new Service::AccessoryInformation();    
+      new Characteristic::Identify();
+      new Characteristic::Name("Right");
+
     new DimmableLED(LED_PIN_TWO);
 
   new SpanAccessory(); 
     new Service::AccessoryInformation();
       new Characteristic::Identify();
-      new Characteristic::Name("Back");
+      new Characteristic::Name("Left");
 
     new DimmableLED(LED_PIN_THREE);
+
+  new SpanAccessory(); 
+    new Service::AccessoryInformation();    
+      new Characteristic::Identify();
+      new Characteristic::Name("Back");
+
     new DimmableLED(LED_PIN_FOUR);
 
 } // end of setup()
