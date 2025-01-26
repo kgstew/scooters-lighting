@@ -46,8 +46,8 @@
 #define LED_PIN_TWO 33
 #define LED_PIN_THREE 16
 #define LED_PIN_FOUR 17
-// #define CONTROL_PIN 5
-// #define STATUS_PIN 5
+#define CONTROL_PIN 5
+#define STATUS_LED_PIN 13
 
 void setup() {
 
@@ -68,8 +68,8 @@ void setup() {
   Serial.begin(115200);
 
   homeSpan.begin(Category::Bridges,"Koral Bridge");
-  // homeSpan.setControlPin(CONTROL_PIN);
-  // homeSpan.setStatusPin(STATUS_PIN);
+  homeSpan.setControlPin(CONTROL_PIN);
+  homeSpan.setStatusPin(STATUS_LED_PIN);
 
   new SpanAccessory();                            // This first Accessory is the new "Bridge" Accessory.  It contains no functional Services, just the Accessory Information Service
     new Service::AccessoryInformation();
