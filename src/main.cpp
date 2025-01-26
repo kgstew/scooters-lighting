@@ -74,6 +74,7 @@ void setup() {
   new SpanAccessory();                            // This first Accessory is the new "Bridge" Accessory.  It contains no functional Services, just the Accessory Information Service
     new Service::AccessoryInformation();
       new Characteristic::Identify();     
+      new Characteristic::Name("Koral Bridge");
 
   new SpanAccessory(); 
     new Service::AccessoryInformation();    
