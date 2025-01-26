@@ -47,23 +47,9 @@
 #define LED_PIN_THREE 16
 #define LED_PIN_FOUR 17
 #define CONTROL_PIN 5
-#define STATUS_LED_PIN 13
+#define STATUS_LED_PIN 19
 
 void setup() {
-
-  // Example 6 changes Example 5 so that LED #2 is now dimmable, instead of just on/off.  This requires us to create a new
-  // derived Service we will name "DEV_DimmableLED"  Instead of creating a new file to store this definition, we will simply
-  // tack it on to the end of the DEV_LED.h file that includes the code we created in Example 5 to control an on/off LED.
-  // Grouping similar-style Services in one ".h" file makes it easier to organize your custom devices.
-
-  // As usual, all previous comments have been deleted and only new changes from the previous example are shown.
-
-  // NOTE: The Arduino/ESP32 code base does not include the function analogWrite() which is typically used to create a PWM
-  // output to drive the brightness of an LED.  Instead, the ESP32 code base itself includes a set of functions to create PWM output
-  // and the ESP32 chip has built-in PWM functionality specifically for this purpose.
-  
-  // HomeSpan wraps all of this PWM functionality into a single integrated class called LedPin, making it very easy to define
-  // dimmable LED pins and set the PWM level (i.e. duty cycle) from 0-100%.  Use of this LedPin class is shown in DEV_DimmableLED.
   
   Serial.begin(115200);
 
