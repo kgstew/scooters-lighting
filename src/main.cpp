@@ -52,7 +52,7 @@
 void setup() {
   
   Serial.begin(115200);
-  homeSpan.setControlPin(CONTROL_PIN);
+  homeSpan.setControlPin(CONTROL_PIN, PushButton::TRIGGER_ON_HIGH);
   homeSpan.setStatusPin(STATUS_LED_PIN);
   homeSpan.begin(Category::Bridges,"Koral Bridge");
 
